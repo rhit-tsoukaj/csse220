@@ -21,10 +21,16 @@ public class Two2DArrayProblems {
 	 * @return the number of times 4 occurs in the array.
 	 */
 	public static int count4s(int[][] data) {
-
-		return 0;
+		int sum = 0;
+		for (int i = 0; i < data.length; i++) {
+			for (int j = 0; j < data[i].length; j++) {
+				if (data[i][j] == 4) {
+					sum += 1;
+				}
+			}
+		}
+		return sum;
 	}
-	
 	
 	
 	/**
@@ -44,9 +50,17 @@ public class Two2DArrayProblems {
 	 * @return true if the array is symmetric, false otherwise.
 	 */
 	public static boolean isSymmetric(int[][] input) {
-		
-		return false;
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				if (input[i][j] == input[j][i]) { continue;
+				}
+				else { 	return false;
+				}
+			}
+		}
+		return true;
 	}
+
 	
 	/**
 	 * Takes an array of numbers (ints), all of which have equal number of digits.
@@ -66,9 +80,10 @@ public class Two2DArrayProblems {
 	 *  
 	 */
 	public static int[][] numbersToDigitArrays(int[] input) {
-		
-		return null;
-	
+		int [] one = new int[input.length];
+		for (int i = 0; i < input.length; i++) {
+			input[i]
+		}
 	}
 	
 	/**
