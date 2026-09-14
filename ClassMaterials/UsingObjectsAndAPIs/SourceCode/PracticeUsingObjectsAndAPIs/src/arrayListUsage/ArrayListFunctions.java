@@ -13,8 +13,15 @@ public class ArrayListFunctions {
 	 * So arrayListOfAs({"Abc","foo","AAA", "bar"}) yields ["Abc","AAA"]
 	 */
 	public static ArrayList<String> arraylistOfAs(String[] strings) {
-		//TODO: Solve me
-		return null;
+		ArrayList<String> output = new ArrayList<String>();
+		for (int i = 0; i < strings.length; i++) {
+			String current = strings[i];
+
+			if (current.startsWith("A")) {
+				output.add(current);
+			}
+		}
+		return output;
 	}
 	/**
 	 * Takes an arrayList of numbers in sorted (ascending) 
@@ -26,9 +33,14 @@ public class ArrayListFunctions {
 	 * 
 	 */
 	public static void insertIntoSorted(ArrayList<Integer> list, int number) {
-		//TODO: Solve me
+		for (int i = 0; i < list.size(); i++) {
+			if (number < list.get(i)) {
+				list.add(i, number);
+				return;
+			}
+		}
+		list.add(number);
 	}
-	
 	/**
 	 * Takes an arraylist of strings and removes all strings longer
 	 * than 3 characters.
@@ -36,7 +48,12 @@ public class ArrayListFunctions {
 	 * So removeLongStrings(["a","xxxx","b","zzzzz"]) yields ["a","b"]
 	 */
 	public static void removeLongStrings(ArrayList<String> strings) {
-		//TODO: Solve me
+		for (int i = 0; i < strings.size(); i++) {
+			if (strings.get(i).length()>1) {
+					strings.remove(i);
+				}
+			}
+		}
 	}
 	
-}
+
