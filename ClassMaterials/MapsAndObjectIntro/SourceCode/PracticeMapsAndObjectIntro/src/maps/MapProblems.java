@@ -30,9 +30,15 @@ public class MapProblems {
 	 * While building the map, if a key already exists, then you know it is a duplicate
 	 */
 	public static String duplicateNicknames(String[] realNames, String[] nicknames) {
+		 HashMap<String[], String[]> nameMap = new HashMap<>();
+		for (int i = 0; i < nicknames.length; i++) {
+			nameMap.put(nicknames, realNames);
+		}
 		return null;
-	} // duplicateNicknames
-	
+	}
+
+	// duplicateNicknames
+
 	
 	/**
 	 * ensures: total score for a hand of cards is computed and returned
