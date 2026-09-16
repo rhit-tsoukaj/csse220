@@ -42,7 +42,7 @@ public class DebugMe {
 	public static String uppercaseIfExclaimation(String sentence) {
 
 		if(sentence.charAt(sentence.length() - 1) == '!') {
-			sentence.toUpperCase();
+			return sentence.toUpperCase();
 		} 
 		return sentence;
 	}
