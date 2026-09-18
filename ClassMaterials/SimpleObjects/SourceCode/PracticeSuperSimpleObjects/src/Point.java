@@ -42,7 +42,8 @@ public class Point {
 	 */
 	private double distanceTo(Point other) {
 		//TODO complete this method
-		return 0;
+
+		return distanceFormulaCalc(this.x, other.x, this.y, other.y);
 	}
 
 	/**
@@ -55,7 +56,9 @@ public class Point {
 	 */
 	private static double distanceBetween(Point a, Point b) {
 		//TODO complete this method
-		return 0;
+		double squaredXDiff = Math.pow(a.x - b.x, 2);
+		double squaredYDiff = Math.pow(a.y - b.y, 2);
+		return Math.sqrt(squaredXDiff + squaredYDiff);
 	}
 	
 	/** 
