@@ -2,14 +2,16 @@ package HWMaps;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * Class: HWMaps
  * <p>
  * ***************************************************************************************
  * REQUIRED HELP CITATION
- *
- * TODO: cite your help here or say "only used CSSE220 materials"
+ * <p>
+ * https://www.w3schools.com/java
+ * <p>
  * ***************************************************************************************
  *
  * <dl>
@@ -46,7 +48,11 @@ public class HWMaps {
      * return value = {CDG=118, FOC=14, IND=230}
      */
     public static HashMap<String, Integer> buildAirportMap(String[] airportCodes, Integer[] airportElevations) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
+        HashMap<String, Integer> airmap = new HashMap<>();
+        for (int i = 0; i < airportCodes.length; i++) {
+            airmap.put(airportCodes[i], airportElevations[i]);
+        }
+        return airmap;
     } // buildAirportMap
 
     /**
@@ -61,7 +67,12 @@ public class HWMaps {
      * Don't forget about the modulus operator (%)
      */
     public static int firstDivisibleBy77(int[] numbers) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 77 == 0) {
+                return numbers[i];
+            }
+        }
+        return -1;
     }
 
     /**
@@ -86,7 +97,23 @@ public class HWMaps {
      * return value = 'c'
      */
     public static char mostCommonCharacter(String inputString) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
+        HashMap<Character, Integer> com = new HashMap<>();
+        int count;
+        int store = 0;
+        char let = inputString.charAt(0);
+        for (int i = 0; i < inputString.length(); i++) {
+            if (com.containsKey(inputString.charAt(i))) {
+                count = com.get(inputString.charAt(i)) + 1;
+            } else {
+                count = 0;
+            }
+            com.put(inputString.charAt(i), count);
+            if (com.get(inputString.charAt(i)) > store) {
+                store = com.get(inputString.charAt(i));
+                let = inputString.charAt(i);
+            }
+        }
+        return let;
     } // mostCommonCharacter
 
 
@@ -122,7 +149,16 @@ public class HWMaps {
      * return value = null, because no city experienced a temperature drop
      */
     public static String getTemperatureDropCity(int[] recordedTemps, String[] cityNames) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
+        HashMap<String, Integer> drop = new HashMap<>();
+        int count;
+        for (int i = 0; i < recordedTemps.length; i++) {
+            if (drop.containsKey(cityNames[i])) {
+                if (drop.get(cityNames[i]) > recordedTemps[i])
+                    return cityNames[i];
+            }
+            drop.put(cityNames[i], recordedTemps[i]);
+        }
+        return null;
     } // getTemperatureDropCity
 
     /**
@@ -138,7 +174,30 @@ public class HWMaps {
      * Requires: arrays, nested for loops
      */
     public static int timesOccur(int[] shorter, int[] longer) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
+        int count = 0;
+        int total = 0;
+        boolean beg = false;
+        for (int i = 0; i < longer.length; i++) {
+            if (longer[i] == shorter[0]) {
+                beg = true;
+            }
+            if (beg == true && (i + (shorter.length - 1) < longer.length)) {
+                for (int j = 0; j < shorter.length; j++) {
+                    if (longer[j + i] == shorter[j]) {
+                        count += 1;
+                    } else {
+                        count = 0;
+                    }
+                    if (count == shorter.length) {
+                        total += 1;
+                        count = 0;
+
+                    }
+                }
+                beg = false;
+            }
+        }
+        return total;
     }
 
     /**
@@ -189,6 +248,21 @@ public class HWMaps {
      * @return list containing all names that correspond to some city more than once
      */
     public static ArrayList<String> citiesVisitedMoreThanOnce(String[] names, String[] citiesVisited) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
+        ArrayList<String> sol = new ArrayList<>();
+        for (int i = 0; i < names.length; i++) {
+            for (int j = i + 1; j < names.length; j++) {
+                if (citiesVisited[j].equals(citiesVisited[i])) {
+                    if (!sol.contains(names[i])) {
+                        if (names[i].equals(names[j])) {
+                            sol.add(names[i]);
+                            break;
+                        }
+                    }
+                }
+            }
+
+        }
+        return sol;
+
     }
 }
