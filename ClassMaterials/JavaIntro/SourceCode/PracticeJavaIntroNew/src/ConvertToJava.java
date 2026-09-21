@@ -13,9 +13,23 @@ public class ConvertToJava {
         // or, if you want to return and print some value:
         // [datatype] result = myFunction([arguments]);
         // System.out.println(result);
+        int result = square(5);
+        System.out.println(result);
     }
 
-    // TODO: Add your converted function here. 
+    // TODO: Add your converted function here.
+
+    // Python version:
+    // def square(x):
+    //        return x * x
+
+    // Java Version:
+    public static int square(int x) {
+        return x * x;
+    }
+
+
+
 
     // === EXAMPLE ===
     // Python version: 
