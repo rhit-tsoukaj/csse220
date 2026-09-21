@@ -1,0 +1,18 @@
+@startuml
+class Wizard {
+name
+addNinjaFriend(newFriend):void
+}
+
+class Ninja {
+name
+level
+setLevel(level):void
+}
+
+class Pirate {
+}
+
+Wizard ->"*" Ninja
+Pirate -left> Ninja
+@enduml
