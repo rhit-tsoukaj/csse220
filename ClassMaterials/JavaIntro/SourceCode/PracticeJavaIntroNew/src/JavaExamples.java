@@ -22,6 +22,9 @@ public class JavaExamples {
 
 		printDivisibleBy3(12); 
 		printDivisibleBy3(13);
+
+		printcubedAlt(4);
+		printcubedAlt(7);
 		
 		guessCubeRoot(27,2.5);
         guessCubeRoot(27, 3.3);
@@ -62,6 +65,12 @@ public class JavaExamples {
 			System.out.println(number + " is NOT divisible by 3");
 		}
 	}
+
+	public static void printcubedAlt(double numberToCube) {
+		double cube = Math.pow(numberToCube, 3);
+		System.out.println(cube);
+	}
+
 	
 	/**
 	 * 
