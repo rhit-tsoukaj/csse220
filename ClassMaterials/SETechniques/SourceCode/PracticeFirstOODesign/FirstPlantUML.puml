@@ -1,0 +1,22 @@
+@startuml
+
+class Main {
+Main()
+setAllBValuesTo3()
+}
+
+class A {
+name
+A(name)
+setBValue(value)
+}
+
+class B {
+count
+B()
+setValue(value)
+}
+
+Main ->"*" A
+A -> B
+@enduml
