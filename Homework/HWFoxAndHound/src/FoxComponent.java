@@ -27,6 +27,9 @@ public class FoxComponent extends JComponent {
 		// There are also many built-in colors in the Color class.
 		Fox fox2 = new Fox(50, 250, Color.BLUE);
 		fox2.drawOn(graphics2);
+
+		Fox fox3 = new Fox(250, 250, Color.PINK);
+		fox3.drawOn(graphics2);
 		
 	}
 }

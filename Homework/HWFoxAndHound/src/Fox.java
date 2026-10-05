@@ -5,11 +5,11 @@ import java.awt.Polygon;
 /**
  * Class representing a fox, drawn as a triangular face with triangular ears.
  *
- * @author YOUR NAME HERE
+ * @author John Tsoukalis
  * <br>
  * **************************************************************************************
  * REQUIRED HELP CITATION
- *         TODO: cite your help here or say "only used CSSE220 materials"
+ *         "only used CSSE220 materials"
  * **************************************************************************************
  */
 public class Fox {
@@ -42,6 +42,9 @@ public class Fox {
         int[] yPoints = {0, HEIGHT, 0};
 
         // TODO: Construct a Polygon for the fox face, then fill it with the fox's color.
+        Polygon foxFace = new Polygon(xPoints, yPoints, 3);
+        g2.setColor(color);
+        g2.fill(foxFace);
 
         // Draw the fox ears
         int[] leftEarXPoints = {0, EAR_WIDTH / 2, EAR_WIDTH};
@@ -51,6 +54,12 @@ public class Fox {
         int[] rightEarYPoints = {0, -EAR_HEIGHT, 0};
 
         // TODO: Construct Polygons for the left and right ears, then fill them with EAR_COLOR.
+        Polygon lFoxEar = new Polygon(leftEarXPoints, leftEarYPoints, 3);
+        Polygon rFoxEar = new Polygon(rightEarXPoints, rightEarYPoints, 3);
+
+        g2.setColor(EAR_COLOR);
+        g2.fill(lFoxEar);
+        g2.fill(rFoxEar);
 
         // Undo translation
         g2.translate(-x, -y);

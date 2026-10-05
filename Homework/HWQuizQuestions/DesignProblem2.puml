@@ -1,0 +1,47 @@
+@startuml
+skinparam style strictuml
+
+class SalesManager {
+
+handleAddGame(title: String, rating: String, price: double): String
+handleAddBundle(gameTitles: ArrayList<String>, name: String, price: double): String
+
+handleSellGame(title: String): String
+handleSellBundle(name: String): String
+
+handleGetHighestRevenueGame(): String
+handleGetBestSellingBundle(): String
+
+handlePrintGameSalesReport(title: String): String
+handlePrintBundleSalesReport(name: String): String
+
+}
+
+
+class Game {
+title: String
+rating: String
+price: double
+numCopiesSold: int
+
+' getNumCopiesSold(): int
+sellCopy(): void
+computeTotalRevenue(): double
+handlePrintSalesReport(): String
+}
+
+class Bundle {
+name: String
+price: double
+numCopiesSold: int
+
+' getNumCopiesSold(): int
+sellCopy(): void
+computeRevenuePerGame(): double
+handlePrintSalesReport(): String
+}
+
+SalesManager ->"*" Bundle
+SalesManager ->"*" Game
+Bundle ->"*" Game
+@enduml

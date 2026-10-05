@@ -1,19 +1,21 @@
 Reflection Questions:
 
 1.A In your implementation could you replace each Question class with just a Java String (yes or no)? 
-
+No
 
 1.B Explain why or why not (2-3 sentences)
-
+The Question object (I'm assuming it's not referring to the actual class itself) acts as a shared object between the question class itself and the other classes.
+If you were to replace an object with a string the information would not be able to be shared since they are immutable and therefor the methods would not function properly.
 
 
 2.A. What data type did you use to represent the 1-to-many relationship between QuizMain and Question? (provide the type declaration)
-
+ArrayList<Question>
 
 2.B. What is another data type you could have used? (provide the type declaration) 
-
+HashMap<Integer, Question>
 
 
 2.C. Would that have made your implementation easier or harder to implement? Explain why (2-3 sentences)
-
+This would not have made my implementation easier since I do not know how to use HashMaps as well as I do ArrayLists.
+This is likely due to me having more experience with ArrayLists however I might think that HashMaps are easier once I learn more techniques regarding them.
 
